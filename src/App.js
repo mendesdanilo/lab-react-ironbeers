@@ -1,24 +1,22 @@
 import React from 'react';
 import './App.css';
-import axios from 'axios';
-import AllBeersClass from './components/AllBeersClass';
+import BeersList from './components/BeersList';
 import { Switch, Route } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import Home from './components/Home';
 import BeerDetails from './components/BeerDetails';
+import NewBeer from './components/NewBeer';
 
-class App extends React.Component {
-  render() {
-    return (
-      <div className="App">
-        <Navbar />
-        <Switch>
-          <Route exact path={['/', '/home']} component={AllBeersClass} />
-          <Route exact path="/beer-detail/:beerId" component={BeerDetails} />
-        </Switch>
-      </div>
-    );
-  }
+function App() {
+  return (
+    <>
+      <Home />
+      <Switch>
+        <Route path="/beers-list" component={BeersList} />
+        <Route path="/new-beer" component={NewBeer} />
+        <Route path="/beer-details/:beerId" component={BeerDetails} />
+      </Switch>
+    </>
+  );
 }
 
 export default App;

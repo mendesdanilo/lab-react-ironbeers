@@ -1,14 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-function NavBar() {
+export default function Navbar() {
   return (
-    <nav>
-      <NavLink activeStyle={{ color: 'green' }} exact to="/">
-        Home
-      </NavLink>
-    </nav>
+    <div>
+      <nav>
+        <NavLink to="/">
+          <h3>🏠</h3>
+        </NavLink>
+      </nav>
+    </div>
   );
 }
-
-export default NavBar;
