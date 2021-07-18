@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { NavLink } from "react-router-dom"
+import Navbar from "./Navbar"
 
 class BeerDetails extends Component {
   state = {
@@ -27,6 +28,7 @@ class BeerDetails extends Component {
     const { image_url, name, tagline, contributed_by } = this.state;
     return (
       <>
+      <Navbar />
         <img src={image_url} />
         <h4>{name}</h4>
         <p>{tagline}</p>
